@@ -3,16 +3,16 @@ Use IEEE.std.logic_1164.all;
 
 
 entity tParity is
- Port( adata: in std_logic_vector (6 downto 0);
-  bdata:out std_logic_vector (7 downto 0));
+ Port( data: in std_logic_vector (6 downto 0);
+  output:out std_logic_vector (7 downto 0));
    end tParity;
 
 
 Architecture Behv of tParity is 
- signal temp: std_logic;
+ signal ptemp: std_logic;
 
 Begin
-  temp <= adata(0) xor adata(1) xor adata(2) xor adata(3) xor adata(4) xor adata(5) xor adata(6);
-  bdata <= adata & not temp ; 
+  ptemp <= data(0) xor data(1) xor data(2) xor data(3) xor data(4) xor data(5) xor data(6);
+  output <= data & not ptemp ; 
 
 end Behv;
